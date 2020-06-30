@@ -3,7 +3,6 @@
 
 
 	ft_strcpy:
-
 		cmp		rsi, 0;
 		jz		segfault;
 		start :
