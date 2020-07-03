@@ -2,6 +2,8 @@
 	section .text
  
 	ft_strcmp:
+		push	rdx							;
+		push	rcx							;		
 		cmp		rdi, 0						;*s1
 		jz		is_null						;
 		cmp		rsi, 0						;*s2
@@ -21,6 +23,8 @@
 			jmp		loop					;
 
 		is_null:
+			pop		rdx						;
+			pop		rcx						;
 			ret;
 
 		last_char:
@@ -30,12 +34,18 @@
 
 		sup:
 			mov		rax, 1					;
+			pop		rdx						;
+			pop		rcx						;
 			ret								;
 	
 		inf:
 			mov		rax, -1					;
+			pop		rdx						;
+			pop		rcx						;
 			ret								;
 
 		equal:
-			mov rax, 0;
-			ret; 
+			mov rax, 0						;
+			pop		rdx						;
+			pop		rcx						;
+			ret								; 
