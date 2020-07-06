@@ -4,11 +4,11 @@ projet 42 2019-2020
 * fichier.s (pas asm inline)
 * compilation avec nasm
 * syntax Intel pas AT&T
-* ft_strlen, ft_strcpy, ft_strcmp, ft_write, ft_read, ft_strdup
+* ft_strlen (man 3), ft_strcpy (man 3), ft_strcmp (man 3), ft_write (man 2), ft_read  (man 2), ft_strdup (man 3 strdup, malloc autorisé)
 * Vérifier les erreurs lors des syscal et renvoyer correctement.
 * Lecture de la variable erno (erno.h) depuis un fichier .c
 * utilisation de extern___error autorisé
-* Doc:
+* Doc/srcs:
  * https://www.youtube.com/watch?reload=9&v=ZBOfeiRN3T8
  * https://cs.lmu.edu/~ray/notes/nasmtutorial/
  * https://software.intel.com/content/www/us/en/develop/articles/intel-sdm.html
@@ -20,7 +20,7 @@ keil.com
  * https://jameshfisher.com/2016/12/13/c-errno/
  * https://www.lacl.fr/tan/asm
  * https://perso.univ-st-etienne.fr/ezequel/L2info/coursAssembleur_x86_64.pdf
-
+ * https://www.tutorialspoint.com/assembly_programming/assembly_system_calls.htm
 * Pour LIBASM :
 
 # Registers
@@ -103,7 +103,7 @@ label:
 call	FUNCTION
 
 ; Parameters registers
-RDI RSI RDX RCX R8 R9
+RDI(s1 ou dst) RSI(s2 ou src) RDX RCX(counter) R8 R9
 
 ; Register to preserve
 RBP RBX R12 R13 R14 R15	; You **MUST** push/pop them if you use them
@@ -113,5 +113,8 @@ RAX
 
 ; syscall
 mov		rax, CODE	; Then RDI, RSI etc.. for params
-					; Add 0x2000000 to the syscall number, see table below
-syscall
+					; for the syscall number, see table in link below:
+* https://blog.rchapman.org/posts/Linux_System_Call_Table_for_x86_64/
+
+# Tests
+ * For the direct testing on VM: do not forget to update the tester makefile from gcc to clang and remove the condition in the tester main.c  
