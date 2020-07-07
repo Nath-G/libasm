@@ -117,4 +117,5 @@ mov		rax, CODE	; Then RDI, RSI etc.. for params
 * https://blog.rchapman.org/posts/Linux_System_Call_Table_for_x86_64/
 
 # Tests
- * For the direct testing on VM: do not forget to update the tester makefile from gcc to clang and remove the condition in the tester main.c  
+ * For the direct testing on VM: do not forget to update the tester makefile from gcc to clang and remove the condition in the tester main.c
+ * https://github.com/HappyTramp/libasm_test
