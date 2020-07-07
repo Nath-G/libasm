@@ -22,7 +22,6 @@ keil.com
  * https://www.lacl.fr/tan/asm
  * https://perso.univ-st-etienne.fr/ezequel/L2info/coursAssembleur_x86_64.pdf
  * https://www.tutorialspoint.com/assembly_programming/assembly_system_calls.htm
-* Pour LIBASM :
 
 # Registers
 ; 64-bit [QWORD]
