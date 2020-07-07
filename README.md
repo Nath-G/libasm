@@ -8,7 +8,8 @@ projet 42 2019-2020
 * Vérifier les erreurs lors des syscal et renvoyer correctement.
 * Lecture de la variable erno (erno.h) depuis un fichier .c
 * utilisation de extern___error autorisé
-* Doc/srcs:
+
+# Doc/srcs:
  * https://www.youtube.com/watch?reload=9&v=ZBOfeiRN3T8
  * https://cs.lmu.edu/~ray/notes/nasmtutorial/
  * https://software.intel.com/content/www/us/en/develop/articles/intel-sdm.html
@@ -42,6 +43,7 @@ AL  CL  DL  BL  SPL BPL SIL DIL
 
 ; 128-bit (used for floating point operations mostly)
 XMM0 ... XMM15
+
 # Common instructions
 
 ; Save register
@@ -103,7 +105,7 @@ label:
 call	FUNCTION
 
 ; Parameters registers
-RDI(s1 ou dst) RSI(s2 ou src) RDX RCX(counter) R8 R9
+RDI(s1 or dst) RSI(s2 or src) RDX RCX(counter) R8 R9
 
 ; Register to preserve
 RBP RBX R12 R13 R14 R15	; You **MUST** push/pop them if you use them
