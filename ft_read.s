@@ -1,28 +1,20 @@
-section .bss         ;Variable segment
-   extern  __errno_location ;
+section .bss
+   extern  __errno_location
    
-section .text          ;Code Segment
+section .text
    global ft_read
   
    ft_read:                
-      mov rax, 0		; set call to read
-      syscall					; call kernel so rax (read)
-      mov   r8, rax
-      cmp r8, 0;
-      jnge exit_error		; if doesn't work, jmp exit error
-	   jmp exit				; jump exit
+      mov rax, 0
+      syscall
+      cmp rax, 0
+      jnge exit_error
+	   ret
 
    exit_error:
-      ;push rbp
-      ;mov rbp, rsp
-      neg r8;
+      mov   r8, rax
+      neg r8
       call __errno_location
-      mov [rax], r8  ;
-      mov rax, -1				; set return to -1
-      ;mov rsp, rbp
-     ; pop rbp
-      ret						; return
-
-   exit:
-	   mov rax, rdx			; set previous value of rdx, in return value
-      ret						; return 
+      mov [rax], r8
+      mov rax, -1
+      ret
