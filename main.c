@@ -59,7 +59,6 @@ Dit l’Ange en tapant du pied Étranger vous-même Dit l’Âne Et il s’envol
 
 void		test_ft_strcmp()
 {
-	// char	dst[100];
 
 	printf("\x1b[32m\nft_strcmp :\x1b[0m\n");
 	printf("	\x1b[34m[1]\x1b[0m \x1b[36m''\x1b[0m\n");
