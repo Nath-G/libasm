@@ -1,13 +1,9 @@
 # libasm
-projet 42 2019-2020
+projet 42 2019-2020 (tourne sous Linux)
 * ASM 64 Bits : attention au calling convention
 * fichier.s (pas asm inline)
 * compilation avec nasm
 * syntax Intel pas AT&T
-* ft_strlen (man 3), ft_strcpy (man 3), ft_strcmp (man 3), ft_write (man 2), ft_read  (man 2), ft_strdup (man 3 strdup, malloc autorisé)
-* Vérifier les erreurs lors des syscal et renvoyer correctement.
-* Lecture de la variable erno (erno.h) depuis un fichier .c
-* utilisation de extern___error autorisé
 
 # Doc/srcs:
  * https://www.youtube.com/watch?reload=9&v=ZBOfeiRN3T8
@@ -71,15 +67,15 @@ cmp	REG, VALUE		; Set flags used by jmp variants
 
 * Label
 label:
-		jmp	label	; next jumps depends on compare flags from cmp
-		je	-		; is equal (jump if Z=1 after comp or sub)
-		jne	-		; is not equal
-		jl	-		; < VALUE
-		jle	-		; <= VALUE
-		jz	-		; = 0
-		jnz	-		; != 0
-		jg	-		; > VALUE
-		jge	-		; >= VALUE
+	*	jmp	label	; next jumps depends on compare flags from cmp
+	*	je	-		; is equal (jump if Z=1 after comp or sub)
+	*	jne	-		; is not equal
+	*	jl	-		; < VALUE
+	*	jle	-		; <= VALUE
+	*	jz	-		; = 0
+	*	jnz	-		; != 0
+	*	jg	-		; > VALUE
+	*	jge	-		; >= VALUE
 
         JA/JNBE (above): saut si supérieur (non signé) 
         JNC/JAE/JNB : saut si C=0 (si supérieur ou égal en non signé) 
@@ -87,7 +83,7 @@ label:
         JE/JZ : saut si Z=1 (si égalité après CMP ou soustraction) 
         JNE/JNZ : saut si Z=0 (différent) 
         JP/JPE : saut si P=1 (parité paire (even)) 
-        JNP/JPO : saut si P=0 (odd=impaire) 
+        JNP/JPO : saut si P=0 odd=impaire) 
         JO : saut si O=1 (dépassement de capacité en nombres signés) 
         JNO : saut si O=0 
         JS : saut si S=1 (nombre signé négatif) 
@@ -107,7 +103,7 @@ call	FUNCTION
 RDI(s1 or dst) RSI(s2 or src) RDX RCX(counter) R8 R9
 
 * Register to preserve
-RBP RBX R12 R13 R14 R15	; You **MUST** push/pop them if you use them
+RBP RBX R12 R13 R14 R15	; You MUST push/pop them if you use them
 
 * Return register
 RAX
