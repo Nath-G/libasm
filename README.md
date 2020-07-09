@@ -1,9 +1,9 @@
-# libasm
-projet 42 2019-2020 (tourne sous Linux)
-* ASM 64 Bits : attention au calling convention
-* fichier.s (pas asm inline)
+# ✅ libasm
+Projet 42 2019-2020 (tourne sous Linux)
+* ASM 64 Bits
+* fichier.s
 * compilation avec nasm
-* syntax Intel pas AT&T
+* syntax Intel
 
 # Doc/srcs:
  * https://www.youtube.com/watch?reload=9&v=ZBOfeiRN3T8
