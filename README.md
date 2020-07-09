@@ -66,7 +66,6 @@ div		REG			; REG = REG / RAX
 cmp	REG, VALUE		; Set flags used by jmp variants
 
 * Label
-label:
 	*	jmp	label	; next jumps depends on compare flags from cmp
 	*	je	-		; is equal (jump if Z=1 after comp or sub)
 	*	jne	-		; is not equal
